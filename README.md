@@ -188,6 +188,29 @@ kubectl apply -f hipster-shop-otel/k8s-manifest.yaml
 kubectl get pods
 ```
 Wait for all ~11 microservices to reach `1/1 Running`. This app has 11 separate deployments so it can take 1-2 minutes.
+**
+kubectl get pods
+NAME                                                   READY   STATUS    RESTARTS        AGE
+adservice-86cd98c664-mn744                             1/1     Running   0               12h
+cartservice-758f8765d4-4h7sb                           1/1     Running   0               12h
+checkoutservice-6f8fd95d59-tkz4g                       1/1     Running   0               12h
+currencyservice-55d4758c48-w668x                       1/1     Running   0               12h
+emailservice-78dbdd869b-nsg2r                          1/1     Running   0               12h
+frontend-595bf8dd5f-gzrlh                              1/1     Running   0               12h
+k6loadgenerator-5b98dc6ddf-r65kw                       1/1     Running   0               12h
+oteld-collector-4gbsq                                  1/1     Running   0               12h
+oteld-collector-pxrj9                                  1/1     Running   0               12h
+paymentservice-6f9c9ccb4d-2jfl7                        1/1     Running   0               12h
+productcatalogservice-968b6fc77-fl9ld                  1/1     Running   0               12h
+prometheus-kube-prometheus-operator-59c8f6fcf6-tjt96   1/1     Running   0               12h
+prometheus-kube-state-metrics-7bc87b8d4b-lm6dr         1/1     Running   0               12h
+prometheus-prometheus-kube-prometheus-prometheus-0     2/2     Running   0               12h
+prometheus-prometheus-node-exporter-h8zk5              1/1     Running   0               12h
+prometheus-prometheus-node-exporter-t87w2              1/1     Running   0               12h
+recommendationservice-654f4bc7c9-f4hfn                 1/1     Running   0               12h
+redis-cart-6cb85c878d-2dgl6                            1/1     Running   0               12h
+shippingservice-7dfb67bbb9-dbhfr                       1/1     Running   0               12h**
+
 
 > **Known fix — `adservice` (Java) may crash-loop:**
 > - **OOMKilled**: the default 300Mi memory limit is too low for a JVM workload. Raise it:
