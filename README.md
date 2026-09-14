@@ -218,7 +218,7 @@ curl -v http://onlineboutique.127.0.0.1.nip.io/
 ## 11. View traces in Dynatrace
 
 1. Log into your Dynatrace tenant.
-2. Open the left menu → **Applications & Microservices → Distributed Traces** (or search "Distributed Traces" in the top search bar).
+2. Open the left menu →  Distributed Traces** (or search "Distributed Traces" in the top search bar).
 3. You should see live request traffic in the **Requests** timeseries graph, and a table of individual spans showing service name, endpoint, duration, and status — e.g. `Frontend-service`, `ProductCatalog-service`, `adservice`, `cartservice`, `checkoutservice`.
 4. Click any row to open the full trace waterfall across services.
 5. Use the search box to filter by service name (e.g. `checkoutservice`) to isolate your app's traffic from Kubernetes health checks.
